@@ -1,0 +1,31 @@
+import React from 'react'
+import { View, Text, TextInput, Button, Image, TouchableOpacity } from 'react-native'
+import Styles from './Styles'
+import Icon from 'react-native-vector-icons/AntDesign'
+import Animated, { Easing, FadeIn, FadeInLeft, FadeInRight } from 'react-native-reanimated'
+
+const Login = ({ navigation }) => {
+    return (
+        <Animated.View entering={FadeInLeft.duration(1500).easing(Easing.ease)} style={Styles.container}>
+            <View style={Styles.logo}>
+                <Icon name="isv" size={100} color="#5F9EA0" />
+                <Text style={Styles.text}>SuperMarket</Text>
+            </View>
+            <Text style={Styles.label}>Login</Text>
+            <TextInput style={Styles.input} />
+            <Text style={Styles.label}>Password</Text>
+            <TextInput secureTextEntry={true} style={Styles.input} />
+            <View style={Styles.createAccountForgot}>
+                <Text onPress={() => { navigation.navigate("createAccount") }} style={Styles.link}>Create Account</Text>
+                <Text onPress={() => { navigation.navigate("forgotPassword") }} style={Styles.link}>Forgot Password</Text>
+            </View>
+            <TouchableOpacity style={Styles.generalButtons} onPress={() => { navigation.replace("login") }}>
+                <Text style={Styles.generalButtonsText}>
+                    Login
+                </Text>
+            </TouchableOpacity>
+        </Animated.View>
+    )
+}
+
+export default Login

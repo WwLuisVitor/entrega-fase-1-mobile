@@ -4,7 +4,10 @@ import Styles from './Styles'
 import Icon from 'react-native-vector-icons/AntDesign'
 import Animated, { Easing, FadeIn, FadeInLeft, FadeInRight } from 'react-native-reanimated'
 
-const Login = ({ navigation }) => {
+const Login = ({ navigation }:any) => {
+    const goToPage= (path:String)=>{
+        navigation.navigate(path)
+    }
     return (
         <Animated.View entering={FadeInLeft.duration(1500).easing(Easing.ease)} style={Styles.container}>
             <View style={Styles.logo}>
@@ -16,10 +19,10 @@ const Login = ({ navigation }) => {
             <Text style={Styles.label}>Password</Text>
             <TextInput secureTextEntry={true} style={Styles.input} />
             <View style={Styles.createAccountForgot}>
-                <Text onPress={() => { navigation.navigate("createAccount") }} style={Styles.link}>Create Account</Text>
-                <Text onPress={() => { navigation.navigate("forgotPassword") }} style={Styles.link}>Forgot Password</Text>
+                <Text onPress={() => {goToPage("createAccount") }} style={Styles.link}>Create Account</Text>
+                <Text onPress={() => {goToPage("forgotPassword") }} style={Styles.link}>Forgot Password</Text>
             </View>
-            <TouchableOpacity style={Styles.generalButtons} onPress={() => { navigation.replace("login") }}>
+            <TouchableOpacity style={Styles.generalButtons} onPress={() => {goToPage("home")}}>
                 <Text style={Styles.generalButtonsText}>
                     Login
                 </Text>

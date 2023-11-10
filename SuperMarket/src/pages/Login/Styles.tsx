@@ -57,6 +57,17 @@ const Styles = StyleSheet.create({
         fontWeight: '700',
         textTransform: 'uppercase',
         color: 'white'
+    },
+    productDescriptionView:{
+        flexDirection:'row',
+        alignSelf:'center',
+        fontSize:30
+    },
+    productDescriptionText:{
+        fontSize:15,
+        marginEnd:'5%',
+        marginBottom:'3%',
+        marginTop:'3%'
     }
 });
 

@@ -4,12 +4,9 @@ import Icon from 'react-native-vector-icons/Entypo'
 import Styles from '../Login/Styles'
 import Animated, { Easing, FadeInLeft } from 'react-native-reanimated'
 
-const ForgotPassword = ({ navigation }) => {
+const ForgotPassword = ({ navigation }:any) => {
   return (
     <Animated.View entering={FadeInLeft.duration(1500).easing(Easing.ease)} style={Styles.container}>
-      <TouchableOpacity onPress={() => { navigation.replace("login") }}>
-        <Icon name="arrow-with-circle-left" size={50} color={"#848484"}></Icon>
-      </TouchableOpacity>
       <View style={Styles.logo}>
         <Icon name="lock" size={100} color="#5F9EA0" />
         <Text style={Styles.text}>Account Recovery</Text>

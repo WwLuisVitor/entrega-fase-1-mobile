@@ -7,13 +7,10 @@ import { TextInput } from 'react-native'
 
 import Animated, { Easing, FadeIn, FadeInLeft, FadeInRight } from 'react-native-reanimated'
 
-const CreateAccount = ({ navigation }) => {
+const CreateAccount = ({ navigation }:any) => {
     return (
         <Animated.ScrollView entering={FadeInRight.duration(1000).easing(Easing.ease)}>
-            <View style={Styles.container} >
-                <TouchableOpacity onPress={() => { navigation.replace("login") }}>
-                    <Icon name="arrow-with-circle-left" size={50} color={"#848484"}></Icon>
-                </TouchableOpacity>
+            <View style={Styles.container}>
                 <View style={Styles.AccountCreation}>
                     <Icon name="user" size={100} color="#5F9EA0" />
                     <Text style={Styles.text}>Account Creation</Text>

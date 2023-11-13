@@ -22,7 +22,7 @@ const Styles = StyleSheet.create({
     createAccountForgot: {
         flexDirection: "row",
         alignSelf: "flex-end",
-        marginBottom: "3%"
+        marginBottom: "3%",
     },
     link: {
         color: "#2196F3",
@@ -30,44 +30,46 @@ const Styles = StyleSheet.create({
     },
     logo: {
         alignItems: "center",
-        marginBottom: "10%"
+        marginBottom: "10%",
     },
     text: {
         fontSize: 28,
         color: "#848484",
-        marginTop: "5%"
+        marginTop: "5%",
+
     },
     AccountCreation: {
         alignItems: "center",
-        marginBottom: "10%"
+        marginBottom: "10%",
 
     },
     backbutton: {
         alignItems: "flex-start",
-        color: "#848484"
+        color: "#5F9EA0"
     },
     generalButtons: {
         backgroundColor: '#5F9EA0',
         alignItems: 'center',
         padding: 12,
         borderRadius: 5,
-        
+
     },
     generalButtonsText: {
         fontWeight: '700',
         textTransform: 'uppercase',
         color: 'white'
     },
-    productDescriptionView:{
-        flexDirection:'row',
-        alignSelf:'center',
-        fontSize:30
+    productDescriptionView: {
+        flexDirection: 'row',
+        alignSelf: 'center',
+        fontSize: 30
     },
-    productDescriptionText:{
-        fontSize:15,
-        marginEnd:'5%',
-        marginBottom:'3%',
-        marginTop:'3%'
+    productDescriptionText: {
+        fontSize: 16,
+        marginEnd: '5%',
+        marginBottom: '3%',
+        marginTop: '3%',
+        color: '#848484'
     }
 });
 

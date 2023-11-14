@@ -64,6 +64,12 @@ const Styles = StyleSheet.create({
         alignSelf: 'center',
         fontSize: 30
     },
+    viewShopCart: {
+        width: '100%',
+        flexDirection: 'column',
+        alignSelf: 'center',
+        fontSize: 30
+    },
     productDescriptionText: {
         fontSize: 16,
         marginEnd: '5%',

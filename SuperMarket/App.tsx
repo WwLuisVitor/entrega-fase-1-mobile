@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Login from './src/pages/Login/Login';
 import CreateAccount from './src/pages/CreateAccount/CreateAccount';
 import Home from './src/pages/Home/Home';
@@ -14,8 +14,16 @@ import Favorites from './src/pages/Favorites/Favorites'
 const App = (): JSX.Element => {
 
   const Stack = createNativeStackNavigator()
-  const [shoppingCart, setShoppingCart] = useState([])
+  const [shoppingCart, setShoppingCart] = useState<any[]>([])
   const [favorites, setFavorites] = useState([])
+
+  function removeItem(currentIndex: number) {
+    const teste = shoppingCart.filter((element, index) => {index !== currentIndex})
+    setShoppingCart([...teste])
+  }
+  function removeAllItem() {
+    setShoppingCart([])
+  }
 
   return (
     <NavigationContainer>
@@ -26,7 +34,7 @@ const App = (): JSX.Element => {
           headerTintColor: '#848484',
           headerBackVisible: false,
           headerTitleAlign: "center",
-          headerLeft: () => (<Icon onPress={() => (navigation.replace("ShoppingCart", { shoppingCart }))} name="shoppingcart" size={30} color={'#848484'}></Icon>),
+          headerLeft: () => (<Icon onPress={() => (navigation.replace("ShoppingCart", { shoppingCart, removeItem, removeAllItem }))} name="shoppingcart" size={30} color={'#848484'}></Icon>),
           headerRight: () => (<Icon onPress={() => (navigation.navigate("Login"))} name="logout" size={28} color={'#848484'}></Icon>)
         })} name="home">{
             () => (

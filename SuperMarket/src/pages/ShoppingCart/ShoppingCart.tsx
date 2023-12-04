@@ -48,7 +48,6 @@ const ShoppingCart = ({ route }: any) => {
                     onPress={() => removeAllItems()}>
                     <Text style={Styles.generalButtonsText}>Remove all items</Text>
                 </TouchableOpacity>
-
             )
             }
         </ScrollView >

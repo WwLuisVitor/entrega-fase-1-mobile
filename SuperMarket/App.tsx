@@ -47,7 +47,7 @@ const App = (): JSX.Element => {
         <Stack.Screen options={({ navigation }) => ({
           title: "Shopping Cart",
           headerTintColor: '#848484',
-          headerRight: () => (<Icon2 onPress={() => (navigation.navigate("home"))} name="payment" size={28} color={'#848484'}></Icon2>),
+          headerRight: () => (<Icon2 onPress={() => (navigation.navigate("home",removeAllItem()))} name="payment" size={28} color={'#848484'}></Icon2>),
           headerLeft:() => (
             <Icon
               onPress={() => {

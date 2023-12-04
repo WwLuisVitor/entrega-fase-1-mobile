@@ -6,9 +6,9 @@ import Icon from 'react-native-vector-icons/AntDesign'
 import { useState } from 'react'
 
 const products = [
-  { id: Math.random() * 4548787897878, name: "Rice ", price: "R$ 15", salePrice: "R$ 10", type: "carbohydrate", desc: "Simple rice", expirationDate: "07/06/2024", image: "https://media.cotabest.com.br/media/sku/arroz-tipo-1-pacote-1kg-camil-pct.jpg" },
-  { id: Math.random() * 4548787897878, name: "Beans ", price: "R$ 10", salePrice: "R$ 5", type: "legume", desc: "Simple beans", expirationDate: "06/06/2024", image: "https://ibassets.com.br/ib.item.image.big/b-b0e8cb327d6d449a86d190e2dcb73d72.jpeg" },
-  { id: Math.random() * 4548787897878, name: "Meat ", price: "R$ 25", salePrice: "R$ 20", type: "protein", desc: "Simple meat", expirationDate: "07/03/2024", image: "https://www.chegouafeira.com.br/image/cache/catalog/FOTOS%20MERCADORIAS/Carne%20Bovina%20Patinho%20em%20Peda%C3%A7o%20500g-500x500.jpg" },
+  { id: 1, name: "Beans ", price: "R$ 10", salePrice: "R$ 5", type: "legume", desc: "Simple beans", expirationDate: "06/06/2024", image: "https://ibassets.com.br/ib.item.image.big/b-b0e8cb327d6d449a86d190e2dcb73d72.jpeg" },
+  { id: 2, name: "Meat ", price: "R$ 25", salePrice: "R$ 20", type: "protein", desc: "Simple meat", expirationDate: "07/03/2024", image: "https://www.chegouafeira.com.br/image/cache/catalog/FOTOS%20MERCADORIAS/Carne%20Bovina%20Patinho%20em%20Peda%C3%A7o%20500g-500x500.jpg" },
+  { id: 3, name: "Rice ", price: "R$ 15", salePrice: "R$ 10", type: "carbohydrate", desc: "Simple rice", expirationDate: "07/06/2024", image: "https://media.cotabest.com.br/media/sku/arroz-tipo-1-pacote-1kg-camil-pct.jpg" },
 ]
 
 const Home = ({ shoppingCart, setShoppingCart, favorites, setFavorites }: any) => {

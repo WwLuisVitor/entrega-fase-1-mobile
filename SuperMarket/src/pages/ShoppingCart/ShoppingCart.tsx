@@ -15,7 +15,7 @@ const ShoppingCart = ({ route }: any) => {
     };
 
     const removeAllItems = () => {
-       
+
         setCartItems([]);
     };
 

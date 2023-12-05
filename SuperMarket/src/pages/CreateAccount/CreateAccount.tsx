@@ -14,7 +14,7 @@ const CreateAccount = ({ navigation }: any) => {
     const [password, setPassword] = useState('')
     const onSubmit = async () => {
         const data = { fullName, email, login, password }
-        firebaseService.save(data,'UserInfo')
+        const result = await firebaseService.save(data, 'UserInfo')
     }
     return (
         <Animated.ScrollView entering={FadeInRight.duration(600).easing(Easing.ease)}>

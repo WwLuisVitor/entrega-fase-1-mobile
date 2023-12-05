@@ -10,7 +10,7 @@ const firebaseService = {
         const col = await collection(db, collectionName)
         const snapshot = await getDocs(col)
         const doclist = await snapshot.docs.map(doc => doc.data())
-        return doclist
+        return [...doclist]
     },
     save: (data: any, collectionName: string) => {
         return addDoc(collection(db,collectionName),data)

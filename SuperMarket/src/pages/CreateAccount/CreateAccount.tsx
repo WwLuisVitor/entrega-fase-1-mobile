@@ -7,14 +7,16 @@ import { TextInput } from 'react-native'
 import Animated, { Easing, FadeIn, FadeInLeft, FadeInRight } from 'react-native-reanimated'
 import firebaseService from '../../services/firebaseServices'
 
+
 const CreateAccount = ({ navigation }: any) => {
     const [fullName, setFullName] = useState('')
     const [email, setEmail] = useState('')
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
     const onSubmit = async () => {
-        const data = { fullName, email, login, password }
+        const data = { fullName, email, login, password, favorites:[],image:'' }
         const result = await firebaseService.save(data, 'UserInfo')
+        navigation.replace("Login")
     }
     return (
         <Animated.ScrollView entering={FadeInRight.duration(600).easing(Easing.ease)}>
@@ -46,7 +48,7 @@ const CreateAccount = ({ navigation }: any) => {
                     onChange={(event) => (setPassword(event.nativeEvent.text))} />
                 <Text style={Styles.label}>Confirm your password</Text>
                 <TextInput secureTextEntry={true} style={Styles.input} />
-                <TouchableOpacity style={Styles.generalButtons} onPress={() => { navigation.replace("Login") }}>
+                <TouchableOpacity style={Styles.generalButtons} onPress={() => {onSubmit() }}>
                     <Text style={Styles.generalButtonsText}>
                         Create
                     </Text>

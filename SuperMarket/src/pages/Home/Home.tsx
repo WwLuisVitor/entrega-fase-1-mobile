@@ -54,7 +54,7 @@ const Home = ({ shoppingCart, setShoppingCart, favorites, setFavorites }: any) =
               {
                 favorites ?
                   <Icon onPress={() => { removeFavorite(product), setFavorites(false) }} name="heart" size={28} color="red" style={{ marginBottom: '3%' }}></Icon> :
-                  <Icon onPress={() => { setFavorites([...favorites,product.id]), setFavorites(true) }} name="hearto" size={28} style={{ marginBottom: '3%' }}></Icon>
+                  <Icon onPress={() => { setFavorites([...favorites,product.firebaseId]), setFavorites(true) }} name="hearto" size={28} style={{ marginBottom: '3%' }}></Icon>
               }
               <TouchableOpacity style={Styles.generalButtons}
                 onPress={() => {

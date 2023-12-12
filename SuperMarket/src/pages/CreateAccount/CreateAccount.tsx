@@ -13,8 +13,9 @@ const CreateAccount = ({ navigation }: any) => {
     const [email, setEmail] = useState('')
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
+    const [image, setImage] = useState('')
     const onSubmit = async () => {
-        const data = { fullName, email, login, password, favorites:[],image:'' }
+        const data = { fullName, email, login, password, favorites:[],image}
         const result = await firebaseService.save(data, 'UserInfo')
         navigation.replace("Login")
     }
@@ -40,7 +41,13 @@ const CreateAccount = ({ navigation }: any) => {
                     style={Styles.input}
                     value={login}
                     onChange={(event) => (setLogin(event.nativeEvent.text))} />
+                <Text style={Styles.label}>User Image</Text>
+                <TextInput
+                    style={Styles.input}
+                    value={image}
+                    onChange={(event) => (setImage(event.nativeEvent.text))} />
                 <Text style={Styles.label}>Password</Text>
+                
                 <TextInput
                     secureTextEntry={true}
                     style={Styles.input}

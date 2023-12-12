@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB54JDpXp_JvAcybPIydzB-2Jrf7MuIoQ0",
-  authDomain: "supermarketmobile-6d5ff.firebaseapp.com",
-  projectId: "supermarketmobile-6d5ff",
-  storageBucket: "supermarketmobile-6d5ff.appspot.com",
-  messagingSenderId: "877930207353",
-  appId: "1:877930207353:web:ce3f2e70ea9f7d8f3a1ca8"
+  apiKey: "AIzaSyAUYMPcmHlroEQjtY1lE1D0GBijJ101sdY",
+    authDomain: "supermarket-iot.firebaseapp.com",
+    projectId: "supermarket-iot",
+    storageBucket: "supermarket-iot.appspot.com",
+    messagingSenderId: "480143890141",
+    appId: "1:480143890141:web:a8159887f02f6d88fcad34"
 };
 
 // Initialize Firebase

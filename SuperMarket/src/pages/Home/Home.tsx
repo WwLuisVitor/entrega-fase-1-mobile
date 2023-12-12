@@ -5,6 +5,8 @@ import Styles from '../Login/Styles'
 import Icon from 'react-native-vector-icons/AntDesign'
 import { useState } from 'react'
 import firebaseService from '../../services/firebaseServices'
+import { getidDocument } from '../../../idDocument'
+
 
 const Home = ({ shoppingCart, setShoppingCart }: any) => {
   const [products, setProducts] = useState([]);
@@ -39,10 +41,15 @@ const Home = ({ shoppingCart, setShoppingCart }: any) => {
       .then(() => {
         openToast('Produto adicionado aos favoritos!');
         setFavorites([...favorites, product]);
+
       })
       .catch((error: any) => {
         console.error('Erro ao adicionar aos favoritos:', error);
       });
+  }
+
+  const addToCart = (product: any) => {
+    firebaseService.save(product, 'shoppingCart')
   }
 
   const removeFromFavorites = (product: any) => {
@@ -76,10 +83,11 @@ const Home = ({ shoppingCart, setShoppingCart }: any) => {
             <Card.Title style={{ fontSize: 20, color: '#848484' }}>{product.name}</Card.Title>
             <Card.Divider />
             <Card.Image source={{ uri: product.image }} />
-            <View style={Styles.productDescriptionView}>
+            <View style={Styles.productDescriptionView}>             
               <Text style={Styles.productDescriptionText}>Price: {product.price}</Text>
               <Text style={Styles.productDescriptionText}>Description: {product.description}</Text>
             </View>
+            
             {
               <Icon
               onPress={() => {
@@ -94,7 +102,7 @@ const Home = ({ shoppingCart, setShoppingCart }: any) => {
             <TouchableOpacity style={Styles.generalButtons}
               onPress={() => {
                 openToast("Item adicionado ao carrinho")
-                setShoppingCart([...shoppingCart, product])
+                addToCart(product)
               }}>
               <Text style={Styles.generalButtonsText}>Add To Cart</Text>
             </TouchableOpacity>

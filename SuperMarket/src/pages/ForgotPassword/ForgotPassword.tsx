@@ -11,8 +11,6 @@ const ForgotPassword = ({ navigation }: any) => {
         <Icon name="lock" size={100} color="#5F9EA0" />
         <Text style={Styles.text}>Account Recovery</Text>
       </View>
-      <Text style={Styles.label}>Login</Text>
-      <TextInput style={Styles.input} />
       <Text style={Styles.label}>Email</Text>
       <TextInput style={Styles.input} />
       <TouchableOpacity style={Styles.generalButtons} onPress={() => { navigation.replace("Login") }}>
